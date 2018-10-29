@@ -32,19 +32,39 @@ type Axes struct {
 	Time  *Time  `json:"time,omitempty"`
 	Ticks *Ticks `json:"ticks,omitempty"`
 }
+
 type Scales struct {
 	YAxes []Axes `json:"yAxes,omitempty"`
 	XAxes []Axes `json:"xAxes,omitempty"`
 }
 
-type Options struct {
-	Scales     `json:"scales,omitempty"`
-	Responsive bool `json:"responsive, omitempty"`
+type Legend struct {
+	Display *bool `json:"display,omitempty"`
 }
+
+type Title struct {
+	Display *bool  `json:"display,omitempty"`
+	Text    string `json:"text,omitempty"`
+}
+
+type Option struct {
+	Responsive          *bool  `json:"responsive,omitempty"`
+	MaintainAspectRatio *bool  `json:"maintainAspectRatio,omitempty"`
+	Title               *Title `json:"title,omitempty"`
+}
+
+type Options struct {
+	Option
+	Scales     `json:"scales,omitempty"`
+	Legend     *Legend `json:"legend,omitempty"`
+	Responsive bool    `json:"responsive, omitempty"`
+}
+
 type Point struct {
 	X string  `json:"x, omitempty"`
 	Y float64 `json:"y, omitempty"`
 }
+
 type Dataset struct {
 	Label           string   `json:"label,omitempty"`
 	Data            []Point  `json:"data,omitempty"`
