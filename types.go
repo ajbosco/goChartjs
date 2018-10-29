@@ -39,11 +39,11 @@ type Scales struct {
 }
 
 type Legend struct {
-	Display *bool `json:"display,omitempty"`
+	Display bool `json:"display,omitempty"`
 }
 
 type Title struct {
-	Display *bool  `json:"display,omitempty"`
+	Display bool   `json:"display,omitempty"`
 	Text    string `json:"text,omitempty"`
 }
 
@@ -52,7 +52,7 @@ type Options struct {
 	Legend              *Legend `json:"legend,omitempty"`
 	Responsive          bool    `json:"responsive, omitempty"`
 	Title               *Title  `json:"title,omitempty"`
-	MaintainAspectRatio *bool   `json:"maintainAspectRatio,omitempty"`
+	MaintainAspectRatio bool    `json:"maintainAspectRatio,omitempty"`
 }
 
 type Point struct {
