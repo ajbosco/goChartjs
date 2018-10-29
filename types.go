@@ -47,17 +47,12 @@ type Title struct {
 	Text    string `json:"text,omitempty"`
 }
 
-type Option struct {
-	Responsive          *bool  `json:"responsive,omitempty"`
-	MaintainAspectRatio *bool  `json:"maintainAspectRatio,omitempty"`
-	Title               *Title `json:"title,omitempty"`
-}
-
 type Options struct {
-	Option
-	Scales     `json:"scales,omitempty"`
-	Legend     *Legend `json:"legend,omitempty"`
-	Responsive bool    `json:"responsive, omitempty"`
+	Scales              `json:"scales,omitempty"`
+	Legend              *Legend `json:"legend,omitempty"`
+	Responsive          bool    `json:"responsive, omitempty"`
+	Title               *Title  `json:"title,omitempty"`
+	MaintainAspectRatio *bool   `json:"maintainAspectRatio,omitempty"`
 }
 
 type Point struct {
