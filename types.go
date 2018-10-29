@@ -1,5 +1,19 @@
 package goChartjs
 
+// Bool is a convenience typedef for pointer to bool so that we can differentiate between unset
+// and false.
+type Bool *bool
+
+var (
+	t = true
+	f = false
+	// True is a convenience for pointer to true
+	True = Bool(&t)
+
+	// False is a convenience for pointer to false
+	False = Bool(&f)
+)
+
 type Color struct {
 	// Red
 	R int
@@ -39,20 +53,20 @@ type Scales struct {
 }
 
 type Legend struct {
-	Display bool `json:"display,omitempty"`
+	Display Bool `json:"display,omitempty"`
 }
 
 type Title struct {
-	Display bool   `json:"display,omitempty"`
+	Display Bool   `json:"display,omitempty"`
 	Text    string `json:"text,omitempty"`
 }
 
 type Options struct {
 	Scales              `json:"scales,omitempty"`
 	Legend              *Legend `json:"legend,omitempty"`
-	Responsive          bool    `json:"responsive, omitempty"`
+	Responsive          Bool    `json:"responsive, omitempty"`
 	Title               *Title  `json:"title,omitempty"`
-	MaintainAspectRatio bool    `json:"maintainAspectRatio,omitempty"`
+	MaintainAspectRatio Bool    `json:"maintainAspectRatio,omitempty"`
 }
 
 type Point struct {
